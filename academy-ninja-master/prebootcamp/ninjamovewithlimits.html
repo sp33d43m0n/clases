@@ -1,0 +1,36 @@
+<html>
+<body>
+	<div id='background'>
+        <div id='character' style='position:absolute; top:250px; left:250px; background-image: url("img/down1.png"); width:59px; height:86px;'></div> 
+		<!--se coloca la imagen down1.png en la posicion top and left -->
+		<!--preguntar donde puede uno conocer los atributos ejp style. Porque top y left como parametros?-->
+    </div>
+    <script type="text/javascript">
+	    var leftValue = 250, topValue = 250; //se inicializan variables de posicion leftValue y topValue, igual a la posicion en el CSS. 
+
+    	function update(){
+    		document.getElementById("character").style.left = leftValue+"px";
+    		document.getElementById("character").style.top = topValue+"px";
+    	}
+
+    	document.onkeydown = function(e){
+    		console.log(e);
+    		if(e.keyCode == 37 && leftValue > 0) { // LEFT    e.keycode tiene un numero para cada tecla de flecha. Se busca reducir o aumentar 
+				                                //jugando con la posicion inicial de top and left. Se delimita en una ventana de 0 a 500. El numero 50 es el salto en pixeles.
+    			leftValue = leftValue - 50;
+    		}
+    		else if (e.keyCode == 39 && leftValue <= 500) { // RIGHT
+    			leftValue = leftValue + 50;    		
+    		}
+    		else if (e.keyCode == 40 && topValue <= 500) { // DOWN
+				topValue = topValue + 50;
+    		}
+			else if (e.keyCode == 38 && topValue > 0) { // UP
+			    topValue = topValue - 50;
+			}
+    		// ...
+    		update();
+    	}
+    </script>
+</body>
+</html>

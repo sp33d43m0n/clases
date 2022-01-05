@@ -1,0 +1,24 @@
+.organizarcentro {
+    display: inline;
+    float: left;
+    margin: 1em;
+    padding: .3em;
+    border-top: 2px solid #ff0080;
+    border-bottom:2px solid #ff0080; 
+    width: 600px;
+    height: 600px;
+    font: 1em Arial, Helvetica, sans-serif;
+}
+
+.organizarlaterales {
+    display: inline;
+    float: left;
+    margin: 1em;
+    padding: .3em;
+    border-top: 2px solid #ffffff;
+    border-bottom:2px solid #ffffff; 
+    width: 600px;
+    height: 600px;
+    font: 1em Arial, Helvetica, sans-serif;
+}
+

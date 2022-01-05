@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    /*border: 1px solid rgb(252, 0, 42);*/
+}
+.container {
+    display:flex;
+    flex-direction: column;
+}
+
+.containerseccion{
+    width: 100%;
+    height: 880px;
+    display:flex;
+}
+
+.seccionleft {
+    background-image: url("https://abs.twimg.com/sticky/illustrations/lohp_en_1302x955.png");
+    width: 54%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccionleft img{
+    height:500px;
+    width:500px;
+}
+
+.seccionrigth{
+    width:46%;
+    background-color: rgb(255, 255, 255);
+}
+
+.containerlogo {
+    margin:25% 10% 6% 5%;
+    /* arriba, derecha, abajo, izquierda */
+}
+
+.containerlogo img{
+    height:43px;
+    width:43px;
+}
+
+.textoprincipal {
+    margin: 0% 10% 5% 5%;
+    /* 1arriba, derecha, abajo, izquierda */
+}
+
+h1 h3{
+    color: rgb(0, 0, 0);
+}
+
+.textoprincipal h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: 56px;
+    font: bold;
+    /*overflow-wrap: break-word; romper una palabra en dos lineas*/
+ }
+
+ .textosecundario {
+    margin: 0% 10% 2% 5%;    
+ }
+ 
+ .textosecundario h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 26px;
+ }
+
+ .botones {
+    display : flex;
+    flex-direction : column;
+    align-items : flex-start;
+    margin: 3% 10% 2% 5%; 
+    /*padding-left: 9px*/
+    
+ }
+
+ .botones button {
+     width: 380px;
+     height: 52px;
+     font-size: 15px;
+     border-radius: 25px;
+     margin: 1%
+     
+ }
+
+#botonacceso{
+    background-color: rgb(29, 155, 240);
+    color: white;
+    border: 0px;
+    font: bold;
+    margin-left: 0%;
+    
+
+}
+
+#botonlogeo {
+    background-color: transparent;
+    color: rgb(29, 155, 240);
+    border: 1px solid #D3DDE2;
+    font: bold;
+    margin-left: 0%;
+}
+
+.seccionfooter {
+    margin: 0% 10% 0% 10%
+    
+}
+
+.seccionfooter ul {
+    display : flex;
+    padding-top: 12px;
+    justify-content:space-between;
+    flex-direction:arrow;
+    list-style:none;
+    font-size: 14px;
+    color: rgb(77, 72, 72);
+}

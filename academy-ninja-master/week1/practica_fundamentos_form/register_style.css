@@ -1,0 +1,70 @@
+*{
+    /*  border: 1px solid rgb(25, 0, 255); */
+}
+
+
+.Border {
+    margin-left: 700px;
+    margin-right: 700px;
+    margin-top:1px;
+    padding-top:1px;
+    border-left: 1px solid rgb(252, 0, 0);
+    border-right: 1px solid rgb(252, 0, 0);
+    border-top: 1px solid rgb(252, 0, 0);
+    border-bottom: 1px solid rgb(252, 0, 0);
+
+}
+
+.maintext h1 {
+    text-align: center;
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 50px;
+    Color: rgb(245, 7, 7)
+}
+
+.secondtext h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    Color: rgb(0, 0, 0)
+}
+
+.location form {
+    margin: 5% 15% 5% 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.locationdivision {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.froggy {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction:row;
+}
+
+.froggy2 {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.finalanswer {
+
+display: flex;
+margin: 5% 15% 5% 15%;
+justify-content:space-between;
+align-items: center;
+flex-direction: row;
+}
+

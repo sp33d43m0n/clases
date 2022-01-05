@@ -1,0 +1,42 @@
+* {
+    border: 1px solid red;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.showmeback p {
+    background-color: green;
+    /*display: inline;*/
+} 
+
+.showmeback a {
+    background-color: rgb(255, 0, 212);
+    margin: 10px;
+    /*display: block;*/
+} 
+
+.showmeback ul {
+    background-color:blue;
+    display: inline;
+
+}
+
+.showmeback ul li {
+    background-color:rgb(9, 255, 0);
+    
+
+}
+
+.changetoblock p {
+    background-color:gray;
+    width: 180px;
+    margin: 10px;
+    padding: 20px;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: bottom;
+    
+}
+
+

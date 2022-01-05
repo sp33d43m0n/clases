@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de registro</title>
+    <link rel="stylesheet" href="register_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="Border">
+        <div class="secondtext">
+            <div class="maintext">
+                <h1>Mi Formulario De Registro</h1>
+            </div>
+            
+            <div>
+                <div class="location">
+                    <form action="">
+                        <!--Caja de texto Nombre-->
+                        <div class="locationdivision">
+                            <label for="Nombre"><h3>Nombre</h3></label>
+                            <input type="text" name="nombre" placeholder="Nombre de usuario" required>
+                        </div>
+                        <!--Caja de texto  Apellido-->
+                        <div class="locationdivision">
+                            <label for="Apellido"><h3>Apellido</h3></label>
+                            <input type="text" name="apellido" placeholder="Apellido del usuario" required>
+                        </div>
+                            <!--Caja de texto email-->
+                        <div class="locationdivision">
+                            <label for="email"><h3>Email</h3></label>
+                            <input type="email" id="email" name="email" placeholder="username@dominio.com" required>
+                        </div>
+                            <!-- seccion password-->
+                        <div class="locationdivision">
+                            <label for="password"><h3>Password</h3></label>
+                            <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Debe contener al menos un numero, una letra mayuscula y una letra minuscula y ocho caracteres" required>
+                        </div>    
+                        <div class="locationdivision">
+                            <label for="password_repeat"><h3>Repita su password</h3></label>
+                            <input type="password" id="password_repeat" name="password_repeat" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Debe contener al menos un numero, una letra mayuscula y una letra minuscula y ocho caracteres" required>
+                        </div>
+                        <div class="locationdivision">
+                            <!-- seccion cunmpleaños-->
+                            <label for="birthday"><h3>Fecha cumpleaños</h3></label>
+                            <input type="date" id="birthday" name="birthday">
+                        </div>
+                </div>
+                    <!-- seccion sexo-->
+                        <div class="froggy">
+                            <h3>Sexo</h3>
+                            <input type="checkbox" id="" name="Hombre" unchecked>
+                            <label for="Hombre">Hombre</label>
+                            <input type="checkbox" id="" name="Mujer" unchecked>
+                            <label for="Mujer">Mujer</label>
+                            <input type="checkbox" id="" name="LGBTQIA+" unchecked>
+                            <label for="LGBTQIA+">LGBTQIA+</label>
+                            <input type="checkbox" id="" name="Otros" unchecked>
+                            <label for="Otros">Otros</label>
+                        </div>
+                        <div class="froggy2">
+                            <!-- seccion descriptivo-->
+                            <label for="descripcion"><h3>Descripción:</h3></label>
+                            <textarea id="" name="descripcion" cols="30" rows="10" placeholder="Realice una breve descripcion de ud"></textarea>
+                        </div>    
+                            <!-- Escoger lenguaje de programacion favorito-->
+                        <div class="finalanswer">    
+                            <label for="Lenguaje"><h3>Lenguaje FRONT Favorito</h3></label>
+                            <select id="" name="Lenguaje" autofocus>
+                                <option value="opcion1">Javascript</option>
+                                <option value="opcion2">HTML</option>
+                                <option value="opcion3">XML</option>
+                                <option value="opcion4">CSS</option>
+                            </select>
+                        </div>                        
+                        <div class="froggy2">    
+                            <!-- Boton de enviar-->
+                            <button type="sumit">Enviar</button>
+                        </div>
+                    </form>
+            </div>
+        </div>
+</div>
+
+</body>
+</html>
+
