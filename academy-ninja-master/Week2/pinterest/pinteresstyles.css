@@ -1,0 +1,53 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid Red;
+}
+
+.container {
+    width: 970px;
+    height: 930px;
+    background-color: blue;
+    margin: 0px auto;
+}
+
+.header {
+    height: 81px;
+    background-color: gray;
+}
+
+.finder {
+    height: 81px;
+    background-color: black;
+}
+
+.main {
+    width: 970px;
+    height: 750px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+    background-color: gray;
+    padding: 10px;
+    column-gap: 15px;
+}
+
+.grid-item {
+    background-color: rgb(159, 159, 211);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.grid-item1 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background-color: rgb(159, 159, 211);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+

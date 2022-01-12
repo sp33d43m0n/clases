@@ -1,0 +1,24 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid red;
+}
+
+#container{
+    width:200px;
+    height:200px;
+    background: blue;
+    position:relative;
+}
+#center-me{
+    background: red;
+    height: 100px;
+    width: 100px; 
+    /*margin: 0 auto;*/
+    margin: auto;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+}

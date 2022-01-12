@@ -56,7 +56,7 @@ thead {
     flex-direction: row;
 }
 
-.espaciohorizonte input {
+.espaciohorizonte {
     display: flex;
     padding-left: 20px;
     width: 50%;

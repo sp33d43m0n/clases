@@ -1,0 +1,57 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    border: 1px solid red;
+}
+
+.container {
+    min-width: 170px;
+    min-height: 100px;
+    margin: 0px auto;
+}
+
+.pressnow a {
+    width: 130px;
+    height: 30px;
+    border-radius: 10px;
+    box-shadow: 1px -1px 0 2px #444;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 5px;
+    color: white;
+    font-size: 15px;
+    display: inline-block;
+}
+
+
+@media only screen and (max-width: 480px){
+    .pressnow a {
+        background-color: gray;
+        border: 1px solid black;
+
+    }
+}
+
+@media only screen and (min-width: 481px){
+    .pressnow a {
+        background-color: rgb(87, 87, 228);
+        border: 1px solid orange;
+    }
+
+}
+
+@media only screen and (min-width: 1024px){
+    .pressnow a {
+        display: inline-block; 
+        margin: 10px;
+        margin-left: 400px;
+        background-color: orange;
+        border: 1px solid rgb(87, 87, 228);
+    }
+}
+
+
+
+
