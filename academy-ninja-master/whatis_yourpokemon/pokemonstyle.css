@@ -1,0 +1,34 @@
+* {
+    border: 1px solid red;
+    padding: 0px;
+    margin: 0px;
+}
+
+.container {
+    width: 1800px;
+    height: auto;
+    display:inline-block;
+    
+}
+
+.main {
+    width: 1400px;
+    height: auto;
+    display:inline-block;
+    background-color: red;
+} 
+
+img {
+    width: 200px;
+    height: 200px;
+    display:inline-block;
+}
+
+.details {
+    width: 350px;
+    height: auto;
+    display:inline-block;
+    background-color: yellow;
+    vertical-align: top;
+}
+
