@@ -1,0 +1,40 @@
+{% extends "app/foundation.html" %}
+{% block titulo %} CHOFER {% endblock %}
+
+{% block contenido %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-6">
+                <h1>CHOFER</h1>
+                <hr>
+                <p>Nombre: {{chofer_info.nombre}}</p>
+                <h3>Camiones asignados</h3>
+                <ul>
+                    {% for camion in chofer_info.camiones.all %}
+                        <li> {{camion.nombre}} - <a href="/chofer/remove/{{chofer_info.id}}/{{camion.id}}"> Eliminar </a></li>
+                    {% endfor %}    
+                </ul>
+            </div>
+
+            <div class="col-6">
+                <h3> AGREGAR CAMIONES </H3>
+                <hr>
+                <form action="/chofer/{{chofer_info.id}}/add/camion/" method="post" >
+                    {% csrf_token %}
+                    <div class="row g-3 align-items-center">
+                        <div class="col-3">
+                            <label for="exampleextarea1" class="form-label">Empresa</label>
+                        </div>
+                        <div class="col-9">    
+                            <select class="form-select" aria-label="Default select example" name="tipos">
+                                <option selected>Seleccione el tipo de camion</option>
+                                {% for tipoValue in Camiones %}
+                                    <option value={{tipoValue.id}}>{{tipoValue.nombre}} - Rutas:{{tipoValue.rutas.count}}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="submit" class="btn btn-primary">AGREGAR CAMION</button>  
+                        </div>
+                    </div>
+                </form>
+            </div>
+{% endblock %}

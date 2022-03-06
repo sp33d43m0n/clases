@@ -1,0 +1,77 @@
+{% extends "app/foundation.html" %}
+
+
+{% block titulo %} Formulario Editar Usuario {% endblock %}
+
+{% block contenido %}
+{% include 'app/menu.html' %}
+
+<div class="container mt-6">
+    <h1><i class="fa fa-user-circle-o" aria-hidden="true"></i> Formulario Editar Usuario </h1>
+    <hr>
+    <div class="col-6">
+        <form action="" method="post" >
+            {% csrf_token %}
+            <div class="row g-3 align-items-center">
+                <div class="col-3">
+                    <label for="exampleextarea1" class="form-label">Nombre</label>
+                </div>
+                <div class="col-9">    
+                    <input class="form-control" type="text" placeholder="Digite su nombre" aria-label="default input example" name="nombre" value={{userEdit.nombre}}>
+                </div>
+                <div class="col-3">
+                    <label for="exampleextarea1" class="form-label">Apellido</label>
+                </div>
+                <div class="col-9">    
+                    <input class="form-control" type="text" placeholder="Digite su apellido" aria-label="default input example" name="apellido" value={{userEdit.apellido}}>
+                </div>
+                <div class="col-3">
+                    <label for="exampleextarea1" class="form-label">Username</label>
+                </div>
+                <div class="col-9">    
+                    <input class="form-control" type="text" placeholder="Digite su username" aria-label="default input example" name="username" value={{userEdit.username}}>
+                </div>
+                <div class="col-3">                    
+                    <label for="exampleextarea1" class="form-label">Genero</label>
+                </div>
+                <div class="col-9">   
+                    <select class="form-select" aria-label="Default select example" name="generos">
+                        <option selected>Selecciona tu genero</option>
+                        {% for tipoValue,Name in tiposGeneros %}
+                            <option value={{tipoValue}}  {% if tipoValue == userEdit.Genero %} selected {% endif %}>{{Name}}</option>
+                        {% endfor %}
+                    </select>             
+                </div>
+                <div class="col-3">
+                    <label for="exampleextarea1" class="form-label">email</label>
+                </div>
+                <div class="col-9">    
+                    <input class="form-control" type="email" placeholder="Digite su email" aria-label="default input example" name="email" value={{userEdit.email}}>
+                </div>
+                {% comment %} <div class="col-3">
+                    <label for="exampleextarea1" class="form-label">Contraseña</label>
+                </div>
+                <div class="col-9">    
+                    <input class="form-control" type="password" placeholder="Digite su contraseña" aria-label="default input example" name="pwd" value={{userEdit.password}}>
+                </div>
+                <div class="col-3">
+                    <label for="exampleextarea1" class="form-label">Confirmar Contraseña</label>
+                </div>
+                <div class="col-9">    
+                    <input class="form-control" type="password" placeholder="Digite su contraseña" aria-label="default input example" name="pwdr" value={{userEdit.password}}>
+                </div> {% endcomment %}
+                <div class="col-3">
+                    <label for="exampleextarea1" class="form-label">Cumpleaños</label>
+                </div>
+                <div class="col-9">    
+                    <input class="form-control" type="date" aria-label="default input example" name="cumpleanos" value={{cumple}}>
+                    <button type="submit" class="btn btn-primary mt-3"><i class="fa fa-plus-circle" aria-hidden="true"></i> Guardar Cambios</button>
+                </div>
+            </div>
+        </form>
+        <a class="btn btn-secondary mt-3" href="{% url 'core:users' %}" role="button" ><i class="fa fa-backward" aria-hidden="true"></i> Volver</a>
+    </div>
+
+</div>
+{% endblock %}
+

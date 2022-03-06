@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>ENCUESTA_DOJO</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col bg-secondary text-light m-2">
+                <p>Welcome to DOJO SURVEY </p>
+            </div>
+            <form action='/resultado' method='post'>
+                <div class="w-100"> </div>
+                    <div class="col bg-info text-light m-2">
+                        <div class="mb-3_email">
+                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                            <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                        </div>
+                    </div>
+                    <div class="w-100"> </div>
+                    <div class="col bg-secondary text-light m-2">
+                        <label for="location" class="form-label">Location</label>
+                        <select class="form-select" name="option1" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">Colombia</option>
+                            <option value="2">Peru</option>
+                            <option value="3">Chile</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="w-100"> </div>
+                <div class="col bg-secondary text-light m-2">
+                    <label for="language" class="form-label">Lenguaje Favorito</label>
+                    <select class="form-select" name="option2" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">Python</option>
+                        <option value="2">C++</option>
+                        <option value="3">Cobol</option>
+                    </select>
+                </div>
+                <div class="w-100"> </div>
+                <div class="col bg-secondary text-light m-2">
+                    <label for="exampleFormControlTextarea1" class="form-label">Comentarios</label>
+                    <!-- preguntar a pato como se mueve este string -->
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comments"></textarea>
+                </div>
+                <div class="w-100"> </div>
+                <div class="col bg-secondary text-light m-2">
+                </div>
+                <div class="w-100"> </div>
+                <div class="col bg-secondary text-light m-2">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" name="geek" role="switch" id="flexSwitchCheckChecked">
+                        <label class="form-check-label" for="flexSwitchCheckChecked">SwitchON Geek</label>
+                    </div>
+                </div>
+                <div class="w-100"> </div>
+                <div class="col bg-secondary text-light m-2">
+                    <input class="form-check-input" type="checkbox" name="information_value" role="switch" id="flexSwitchCheckChecked2" checked>
+                    <!-- preguntar a pato como transportar el valor rpta encontre solucion, los IDs no pueden ser iguales entre diferentes inputs-->
+                    <label class="form-check-label" for="flexSwitchCheckChecked2">Aceptas la manipulacion de la
+                        información</label>
+                </div>
+                <div class="w-100"> </div>
+                <div class="col bg-secondary text-light m-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">Soy mayor de edad</label>
+                    </div>
+                    <!-- no pude camiarle el nombre que trae por defecto de bootstrap, verificar con pato-->
+                </div>
+                <div class="w-100"> </div>
+                <div class="col bg-secondary text-light m-2">
+                    <input class="btn btn-primary" type="submit" value="Enviar">
+                </div>
+                </div>
+                </div>
+            </form>
+
+</body>
+
+</html>

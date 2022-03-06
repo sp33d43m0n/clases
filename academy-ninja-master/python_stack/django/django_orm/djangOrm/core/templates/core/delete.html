@@ -1,0 +1,22 @@
+{% extends "app/foundation.html" %}
+
+
+{% block titulo %} Listado de Usuarios {% endblock %}
+
+{% block contenido %}
+{% include 'app/menu.html' %}
+
+<div class="container mt-6">
+    <h1><i class="fa fa-minus-circle fa-2x" aria-hidden="true"></i> ¿Seguro quieres eliminar? </h1>
+    <p> Estas por eliminar tu cuenta {{usuario.nombre}} - {{usuario.apellido}} </p>
+    <hr>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger"> SI, ELIMINAR!!</button>
+        <a class="btn btn-secondary" href="{% url 'core:users' %}" role="button" ><i class="fa fa-backward" aria-hidden="true"></i> Volver-Cancelar</a>
+    </form>
+
+</div>
+{% endblock %}
+

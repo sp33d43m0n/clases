@@ -1,0 +1,23 @@
+{% extends "app/foundation.html" %}
+    {% load static %}
+{% block titulo %} PAGINA PRINCIPAL {% endblock %}
+
+{% block estilos %}
+
+    <link href="{% static 'css/misestilos.css' %}" rel="stylesheet">
+
+{% endblock %}
+
+
+{% block contenido %}
+
+<h1> Esto es DJANGO </h1>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    toastr.info("CREANDO TODO DESDE DJANGO");
+</script>
+
+{% endblock %}

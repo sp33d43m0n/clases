@@ -1,0 +1,68 @@
+
+{% extends "app/foundation.html" %}
+{% block titulo %} CAMIONES {% endblock %}
+{% block contenido %}
+{% include 'app/menu.html' %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-6">
+            <h1>CAMIONES</h1>
+            <hr>
+
+                {% for camion in camiones_info %}
+
+                    <p>Nombre: {{camion.nombre}}</p>
+                    <p>Tipo: {{camion.tipo}} - {{camion.get_tipo_display}}</p>
+                    <p>Cantidad de Rutas: {{camion.rutas.count}}</p>
+                    <a href="{% url 'camion' id=camion.id %}"> Mas detalles </a>
+                    
+                    {% if camion.rutas.count > 0 %}
+                    
+                        <h6> RUTAS </H6>  
+                        <ul>
+                        {% for ruta in camion.rutas.all %}
+                            <li> {{ruta}} </li>
+                        {% endfor %}
+                        </ul>
+
+                    {% endif %}
+
+                    <hr>
+
+                {% endfor %}
+        </div> 
+        <div class="col-6">
+            <h3> FORMULARIO DE CAMIONES </H3>
+            <hr>
+            <form action="" method="post" >
+                {% csrf_token %}
+                <div class="row g-3 align-items-center">
+                    <div class="col-3">
+                        <label for="exampleextarea1" class="form-label">Nombre</label>
+                    </div>
+                    <div class="col-9">    
+                        <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" name="nombre">
+                    </div>
+                    <div class="col-3">
+                        <label for="exampleextarea1" class="form-label">Tipo</label>
+                    </div>
+                    <div class="col-9">    
+                        <select class="form-select" aria-label="Default select example" name="tipos">
+                            <option selected>Seleccione el tipo de camion</option>
+                            {% for tipoValue in tiposCamiones %}
+                                <option value={{tipoValue.0}}>{{tipoValue.1}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-3">
+                        <button type="submit" class="btn btn-primary">Enviar</button>    
+                    </div>
+                    <div class="col-9">    
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+        
+{% endblock %}

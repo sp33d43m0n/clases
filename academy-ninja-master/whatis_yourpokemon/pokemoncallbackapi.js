@@ -16,6 +16,7 @@ $(document).ready(function(){
                 html_str += "</h2><p>";
                 html_str += "<img src='https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/"+identifier+".svg'>";
                 html_str += "</p><b>Types</b></p><ul>";
+                
                 for(let i = 0; i < res.types.length; i++) {
                     html_str += "<li>" + res.types[i].type.name + "</li>";
                 }

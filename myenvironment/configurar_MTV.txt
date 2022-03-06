@@ -1,0 +1,53 @@
+********************
+COMANDOS DJANGO
+********************
+
+1. crear un proyecto
+django-admin startproject [your_project_name_here]
+
+2. Correr el proyecto. Posicionado dentro de la carpeta 
+python manage.py runserver
+
+3.crear una nueva aplicacion
+python manage.py startapp [your_app_name_here]
+
+4. cuando se entra en vscode , si se tiene un entorno virtual se tiene que utilizar el interprete
+de la carpeta Script asociado al entorno virtual. Busca python.exe
+
+5. Sobre el proyecto, utilizar el archivo urls.py Crear la ruta del proyecto
+
+Colocar la palabra include al final de la siguiente linea 
+from django.urls import path, include
+
+Agregar el primer path con el nombre del app creado en el punto 3.
+urlpatterns = [
+    path('', include('primer_proyecto.urls')),
+    path('admin/', admin.site.urls),
+    
+]
+
+6. Luego en el app hay que indicarle que se tiene una vista, para completar el modelo vista controlador o MTV. Crear el archivo urls.py y pegar
+
+from django.urls import path     
+from . import views
+urlpatterns = [
+    path('', views.index),	   
+]
+
+7. sobre el archivo view del app pegar
+
+colocar el HttpResponse al final de la linea
+from django.shortcuts import render, HttpResponse
+
+definir la vista. 
+def index(request):
+    return HttpResponse("this is the equivalent of @app.route('/')!")
+
+
+FINAL. Cuando se finalice el proyecto para que la persona que corre el codigo sepa que debe instalar 
+crear un archivo de requerimientos
+
+pip freeze > requerimientos.txt
+
+
+fboisier github

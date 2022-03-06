@@ -1,0 +1,33 @@
+Descripción general de los comandos
+
+Crea un nuevo registro
+	ClassName.objects.create(field1="valor de field1", field2="valor de field2", etc.)
+
+Leer registros existente
+	Métodos que regresan una sola instancia de una clase
+		ClassName.objects.first() - obtiene el primer valor en la tabla
+		ClassName.objects.last() - obtiene el ultimo valor en la tabla
+		ClassName.objects.get(id=1) - obtiene el registro en la tabla con el ID especificado
+			este método arrojará un error a menos que solo un registro coincida exactamente con la consulta
+	
+	Métodos que regresan una lista de la instancia de una clase
+		ClassName.objects.all() - regresa todos los registros en una tabla
+		ClassName.objects.filter(field1="valor for field1", etc.) - regresa cualquier registro que coincida con el query 
+		ClassName.objects.exclude(field1="value for field1", etc.) - obtiene cualquier valor que no coincida con el query
+	
+	Actualiza un registro existente
+		c = ClassName.objects.get(id=1)
+		c.field_name = "algún valor nuevo para field_name"
+		c.save()
+	
+	Borrar un registro existente
+		c = ClassName.objects.get(id=1)
+		c.delete()
+	
+	Otros métodos útiles
+		Mostrar registros
+			ClassName.objects.get(id=1).__dict__ - muestra los valores de un registro como un diccionario 
+			ClassName.objects.all().values() - muestra todos los valores de QuerySet (i.e. varias instancias)
+		Ordenar registros
+			ClassName.objects.all().order_by("field_name") - ordena por campo, ascendente
+			ClassName.objects.all().order_by("-field_name") - ordena por campo, descendente 

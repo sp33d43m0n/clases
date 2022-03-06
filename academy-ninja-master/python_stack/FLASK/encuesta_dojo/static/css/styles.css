@@ -1,0 +1,17 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid red;
+}
+
+.mb-3_email {
+    display:flex;
+}
+
+.mb-3_email label {
+    margin-right: 20px;
+}
+.mb-3_email input {
+    width:50%
+}
+

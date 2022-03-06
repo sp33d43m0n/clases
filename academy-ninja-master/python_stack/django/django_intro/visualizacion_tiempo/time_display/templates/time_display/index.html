@@ -1,0 +1,28 @@
+{% extends "time_display/foundation.html" %}
+{% block titulo %} COLOMBIA {% endblock %}
+
+{% block pais %} BOGOTA/COLOMBIA {% endblock %}
+
+{% block contenido %}
+<div class='container'>
+    
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-3 border border-primary bg-secondary">
+            <h5 class="text-center"> The current time and date </h5>
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="row mt-3">
+        <div class="col"></div>
+        <div class="col-4 bg-secondary">
+            <p class= "text-center fw-bold fs-1"> {{time}} </p>
+        </div>
+        <div class="col"></div>
+    </div>
+</div> 
+
+{% endblock %}
+
+
+

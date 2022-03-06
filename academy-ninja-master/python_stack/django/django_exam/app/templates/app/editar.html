@@ -1,0 +1,39 @@
+{% extends "core/foundation.html" %}
+
+
+{% block titulo %} Formulario Editar regalos {% endblock %}
+
+{% block contenido %}
+{% include 'core/menu.html' %}
+
+<div class="container mt-6">
+    <h1><i class="fa fa-gift" aria-hidden="true"></i> Formulario Editar regalos </h1>
+    <hr>
+    <div class="col-6">
+        <form action=""  method="post" >
+            {% csrf_token %}
+            <div class="row g-3 align-items-center">
+                <div class="col-3">
+                    <label for="exampleextarea1" class="form-label">Nombre del regalo</label>
+                </div>
+                <div class="col-9">    
+                    <input class="form-control" type="text" placeholder="Digite el regalo" aria-label="default input example" name="nombre" value={{nombre.nombregift}}>
+                </div>
+                <div class="col-3">
+                    <label for="exampleextarea1" class="form-label">Descripcion corta</label>
+                </div>
+                <div class="col-9">    
+                    <input class="form-control" type="text" placeholder="Digite la descripcion" aria-label="default input example" name="descripcion" value={{nombre.descripcion}}>
+                </div>
+                <div class="col-9">
+                    <a class="btn btn-secondary mt-3" href="{% url 'acceso:added' id=nombre.usuario.id  %}" role="button" ><i class="fa fa-backward" aria-hidden="true"></i> Volver</a>    
+                    <button type="submit" class="btn btn-primary mt-3"><i class="fa fa-plus-circle" aria-hidden="true"></i> Guardar Cambios</button>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+
+</div> 
+{% endblock %}
+

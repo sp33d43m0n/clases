@@ -1,0 +1,78 @@
+{% extends "core/foundation.html" %}
+
+
+{% block titulo %} Lista de regalos {% endblock %}
+
+{% block contenido %}
+{% include 'core/menu.html' %}
+
+<div class="container mt-6">
+    <h1><i class="fa fa-gift" aria-hidden="true"></i> Lista de regalos </h1>
+    <h2> Hola: {{request.session.usuario.nombre}} </h2>
+    <h5> Lista de tus deseos no concedidos </h5>
+    <hr>
+    
+    <div class="container m-6 table-responsive-sm">
+        <table class="table table-striped table-hover table-sm">
+            <thead>
+            <tr>
+                <th scope="col"># ID</th>
+                <th scope="col">Item</th>
+                <th scope="col">Agregado por:</th>
+                <th scope="col">Creado en:</th>
+                <th scope="col">Acciones</th>
+
+            </tr>
+            </thead> 
+            <tbody>
+            {% for regalo in listaRegalos %}
+                <tr>
+                    <th scope="row">{{regalo.id}}</th>
+                    <td>{{regalo.nombregift}}</td>
+                    <td>{{regalo.usuario.username}}</td>
+                    <td>{{regalo.created_at }}</td>
+                    <td><a href="{% url 'acceso:edit' id=regalo.id %}" class="btn btn-success btn-sm"><i class="fa fa-pencil-square" aria-hidden="true"></i></a> / <a href="{% url 'acceso:borrar' id=regalo.id %}" class="btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></a> /  <a href="{% url 'acceso:otorgar' id=regalo.id %}" class="btn btn-warning btn-sm"><i class="fa fa-sign-language" aria-hidden="true"></i></a></td></td>
+                    {% comment %} td><a href="{% url 'core:edit_users' id=user.id %}" class="btn btn-success btn-sm"><i class="fa fa-pencil-square" aria-hidden="true"></i></a> / <a href="{% url 'core:edit_form' id=user.id %}" class="btn btn-warning btn-sm"><i class="fa fa-pencil-square" aria-hidden="true"></i></a> / <a href="{% url 'core:delete_users' id=user.id %}" class="btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></a></td> {% endcomment %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="container m-6 table-responsive-sm">
+        <h5> Otros deseos </h5>
+        <table class="table table-striped table-hover table-sm">
+            <thead>
+            <tr>
+                <th scope="col"># ID</th>
+                <th scope="col">Item</th>
+                <th scope="col">Agregado por:</th>
+                <th scope="col">Creado en:</th>
+                <th scope="col">Concedido en:</th>
+                <th scope="col">Likes</th>
+                <th scope="col">Actions</th>
+
+            </tr>
+            </thead> 
+            <tbody>
+            {% for regalo in listaRegalostodos %}
+                <tr>
+                    <th scope="row">{{regalo.id}}</th>
+                    <td>{{regalo.nombregift}}</td>
+                    <td>{{regalo.usuario.username}}</td>
+                    <td>{{regalo.created_at }}</td>
+                    <td>{{regalo.updated_at }}</td>
+                    <td>{{regalo.likes }}  </td>
+                    <td><a href="{% url 'acceso:like' id=regalo.id %}" class="btn btn-success btn-sm"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a></td>
+                    {% comment %} td><a href="{% url 'core:edit_users' id=user.id %}" class="btn btn-success btn-sm"><i class="fa fa-pencil-square" aria-hidden="true"></i></a> / <a href="{% url 'core:edit_form' id=user.id %}" class="btn btn-warning btn-sm"><i class="fa fa-pencil-square" aria-hidden="true"></i></a> / <a href="{% url 'core:delete_users' id=user.id %}" class="btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></a></td> {% endcomment %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+{% endblock %}

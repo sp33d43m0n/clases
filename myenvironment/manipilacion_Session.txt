@@ -1,0 +1,21 @@
+Métodos de sesión útiles:
+
+request.session['key']
+Esto recuperará (obtendrá) el valor asociado con 'key'
+
+request.session['key'] = 'value'
+Establece el valor que se almacenará 'key'en 'valor'
+
+'key' in request.session
+Devuelve un booleande si a keyestá sessiono no
+
+{{ request.session.name }}
+Usa la notación de puntos ( .) para acceder a las request.sessionclaves de las plantillas ya que los corchetes ( []) no están permitidos allí
+
+del request.session['key']
+Elimina una clave de sesión si existe, arroja un KeyErrorsi no existe. Úsalo junto con tryy exceptya que es mejor pedir perdón que permiso
+
+Nota : Si está almacenando una lista en la sesión que se está modificando (como un anexo), deberá guardar la sesión después del anexo, de esta manera:
+request.session['my_list'] = []
+request.session['my_list'].append("new item")
+request.session.save()

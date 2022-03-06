@@ -1,0 +1,42 @@
+
+{% extends "app/foundation.html" %}
+{% block titulo %} CHOFERES {% endblock %}
+{% block contenido %}
+{% include 'app/menu.html' %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-6">
+            <h1>CHOFERES</h1>
+            <hr>
+            {% for chofer in choferes_info %}
+            <p> Nombre: {{chofer.nombre}}</p>
+            <a href="{% url 'chofer' id=chofer.id %}"> Mas detalles </a>
+            <hr>
+            {% endfor %}
+        </div> 
+        
+        <div class="col-6">
+            <h3> FORMULARIO DE CHOFERES </H3>
+            <hr>
+            <form action="" method="post" >
+                {% csrf_token %}
+                <div class="row g-3 align-items-center">
+                    <div class="col-3">
+                        <label for="exampleextarea1" class="form-label">Chofer</label>
+                    </div>
+                    <div class="col-9">    
+                        <input class="form-control" type="text" placeholder="Nombre del chofer" aria-label="default input example" name="nombre">
+                    </div>
+                    <div class="col-3">
+                        <button type="submit" class="btn btn-primary">Enviar</button>    
+                    </div>
+                    <div class="col-9">    
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+        
+{% endblock %}
