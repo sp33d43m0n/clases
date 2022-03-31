@@ -1,0 +1,58 @@
+{% extends "core/foundation.html" %}
+{% comment %} {% load socialaccount %} {% endcomment %}
+
+
+{% block titulo %} Login {% endblock %}
+
+{% block loginAdmin %}
+{% include 'core/loginAdmin.html' %} 
+{% endblock %}
+
+{% block contenido %}
+{% include 'core/menu.html' %}
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-1"> </div>
+        <div class="col-4">
+            <h3><i class="fa fa-sign-in" aria-hidden="true"></i> LOGIN</h3>
+            <hr>
+            <form action="#" method="post" >
+                {% csrf_token %}
+                {% comment %} Mostrar los errores {% endcomment %}
+                {{ formLogin.non_field_errors }}   
+
+                {% for field in formLogin %}
+                <div class="mb-3 row">
+
+
+                    <label for="{{ field.id_for_label }}" class="col-sm-3 col-form-label">{{ field.label }}</label>
+                    <div class="col-sm-9">
+                        {{ field }}
+                    </div>
+
+                    {% if field.errors %}
+
+                    <div class="alert alert-danger mt-2" role="alert">
+                        {% for error in field.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+
+                    {% endif %}
+
+                    {% if field.help_text %}
+                    <p class="help">{{ field.help_text|safe }}</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                <div class="mb-3 row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-9">
+                        <button class="btn btn-primary offset-2 google" type="submit"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Logearse </button>
+                    </div>
+                </div>
+            </form>
+        </div> 
+    </div>
+</div>
+{% endblock %}

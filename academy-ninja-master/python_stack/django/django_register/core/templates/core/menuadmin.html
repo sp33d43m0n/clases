@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #808080;">
+    <div class="container-fluid">
+        <a class="navbar-brand mb-0 h1 fw-bolder" href="#"><i class="fa fa-hand-rock-o fa-2x" aria-hidden="true"></i>PARZEROS-ADMIN</a>
+        <a class="nav-link fs-5 fw-light text-light" href="#"> Welcome, {{user.username}}
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                {% if user.is_authenticated %}
+                {% comment %} <a class="btn btn-sm btn-primary me-1" aria-current="page" href="{% url 'camiones' %}">Camiones</a>
+                <a class="btn btn-sm btn-primary me-1" href="{% url 'choferes' %}"> Choferes</a>
+                <a class="btn btn-sm btn-primary me-1" href="{% url 'core:users' %}">Usuarios</a> {% endcomment %}
+                <a class="btn btn-sm btn-danger me-1" href="{% url 'acceso:logout' %}">Logout</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="{% url 'acceso:active' %}">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'acceso:link1' %}">Link1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'acceso:link2' %}">Link2</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled">Disabled</a>
+    </li>
+  </ul>
+</div>
+
+
+
+{% comment %} {% url 'acceso:logout' %} {% endcomment %}

@@ -1,0 +1,70 @@
+crear rama dentro de la carpeta que se clona
+$git checkout -b nombre
+git push y copiar la salida
+
+$ git push
+fatal: The current branch login_register has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin login_register
+
+$git push --set-upstream origin login_register
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'login_register' on GitHub by visiting:
+remote:      https://github.com/bejavago/Proyecto_iot/pull/new/login_register
+remote:
+To https://github.com/bejavago/Proyecto_iot.git
+ * [new branch]      login_register -> login_register
+branch 'login_register' set up to track 'origin/login_register'.
+
+git add. 
+git commit -m "añadiendo cambios"
+git push
+
+se entra a la pagina https://github.com/bejavago/Proyecto_iot/pull/new/login_register
+despues de que me aprueben el cambio, se elimina la rama en github webpage
+
+y en vscode debo salir de la rama que ya elimine. git checkout master
+y para actualizar se necesita hacer un 
+
+$git pull
+
+puedo meterme a las ramas de otros para ayudar
+git checkout pablo
+
+
+para eliminar una rama que creo por equivocacion
+1. salgo a la maestra 
+$ git checkout master
+2. git branch -D francisco2
+
+Y luego creo mi nueva rama. git checkout -b francisco2
+
+pero no me va a dejar si no he guardado mis cambios
+se puede usar 
+$git stash para guardar en memoria
+
+
+entro a la otra rama y hago la ayuda
+salgo git checkout frnacisco 2
+y cuando vuelvo digito
+
+$git stash pop
+
+$git reset HEAD-1    borrar el ultimo commit
+saltarse los commits cuando hay error 
+
+git push --force
+
+
+volver al pasado
+$git log
+volviendo
+el hard borra todos los cambios, tener cuidado
+$git reset --hard dbcioueqwoeuiqw3989483048400
+
+
+cherrypick es un minimerge es avanzado 
+
+

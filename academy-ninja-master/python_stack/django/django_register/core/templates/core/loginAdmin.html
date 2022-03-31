@@ -1,0 +1,12 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand text-end">¿Eres empleado?</a>
+      <form method="post" class="d-flex" action="/login_admin">
+        {% csrf_token %}
+        <input class="form-control me-2" type="text" placeholder="User" aria-label="default input" name="nombre_admin">
+        <input class="form-control me-2" type="text" placeholder="Password" aria-label="default input" name="pwd_admin">
+        <button class="btn btn-outline-success" type="submit">Login</button>
+      </form>
+    </div>
+  </nav>
+

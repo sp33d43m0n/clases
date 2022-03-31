@@ -1,0 +1,19 @@
+{% extends "core/foundationadmin.html" %}
+
+
+{% block titulo %} loged administrator {% endblock %}
+
+{% block contenido %}
+{% include 'core/menuadmin.html' %}
+{% comment %} {% include 'core/menu.html' %} {% endcomment %}
+<div class="container mt-5">
+    {% comment %} <h1> ESTAS LOGEADO {{ request.user.first_name }} {{ request.user.last_name }} </h1> {% endcomment %}
+</div>
+{% endblock %}
+
+
+{% comment %} LANDING PAGE
+1.-register-> ruta que registra nuevo usuario -ok -> registrar en la BD->  sitio privado(cliente-normal)
+2.-google->ruta que registra a traves de google -ok -> valida contra google(social auth) - ok -> sitio privado(cliente-normal)
+3.-login->ruta3 que autentica contra usuarios en la BD -> metodo para validar el usuario -- ok -->sitio privado(admin) {% endcomment %}
+

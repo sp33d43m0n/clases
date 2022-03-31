@@ -1,0 +1,13 @@
+{% extends "core/foundation.html" %}
+
+
+{% block titulo %} loged gmail {% endblock %}
+
+{% block contenido %}
+{% include 'core/menu.html' %}
+{% comment %} {% include 'core/menu.html' %} {% endcomment %}
+<div class="container mt-5">
+    <h1> ESTAS LOGEADO {{ request.session.usuario.nombre }} </h1>
+    <h1> ESTAS LOGEADO {{ request.user.first_name }} {{ request.user.last_name }} </h1>
+</div>
+{% endblock %}
